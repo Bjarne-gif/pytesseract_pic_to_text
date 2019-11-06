@@ -11,9 +11,6 @@ pytesseract.pytesseract.tesseract_cmd = 'C:/Users/Windoof/AppData/Local/Tesserac
 img = "text_bild2.PNG"
 testtxt = "testfile1.txt"
 
-#convert image to string
-#x = image_to_string(Image.open(img))
-
 #functions
 def readfile():
     file = open(testtxt,"r") 
