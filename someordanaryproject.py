@@ -1,4 +1,5 @@
 import pytesseract
+import os
 import os.path
 from pytesseract import image_to_string
 from PIL import Image
@@ -22,16 +23,19 @@ def writefile():
     file = open(testtxt,"w") 
     file.write(""+image_to_string(Image.open(img)))
     file.close() 
+def deletetxtfile():
+    os.remove(testtxt)
 def answerwantdelete():
     varanswerwantdelete = input("\n moechtest du die Textdatei loeschen? y/n: ")
     if varanswerwantdelete == "y":
-        print("lösche...")
+        print("Textdatei wurde gelöscht!")
+        deletetxtfile()
         pass
     elif varanswerwantdelete == "n":
-        print("lasse erstellt...")
+        print("lasse Textdatei erstellt...")
         pass
     else:
-        print("verstehe deine Antwort nicht!")
+        print("verstehe deine Antwort nicht, bitte schreibe y oder n")
         pass
 
 #write text from the image into document or just read it
@@ -39,9 +43,8 @@ if not os.path.isfile(testtxt):
     print("Textdatei wird erstellt und ausgegeben\n")
     writefile()
     readfile()
-    answerwantdelete()
 else:
     print("Textdatei wurde nicht erstellt weil sie existiert und wird nun ausgelesen\n")
     readfile()
-    answerwantdelete() 
 pass
+answerwantdelete() 
