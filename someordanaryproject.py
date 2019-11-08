@@ -32,7 +32,7 @@ def answerwantdelete():
         print("lasse Textdatei erstellt und beende das script...")
         pass
     else:
-        print("verstehe deine Antwort nicht, bitte schreibe y oder n")
+        print("verstehe deine Antwort nicht, bitte schreibe y oder n.\n")
         pass
 
 def answertotakeownpic():
@@ -43,7 +43,7 @@ def answertotakeownpic():
     elif varanswertotakeownpic == "n":
         ownpic = input("\n Bitte Bild im gleichen Ordner legen und den Namen hier eintragen (Beispiel: Bild1.png):")
         if not os.path.isfile(ownpic):
-            print("Deine Datei existiert nicht, ich nehme das Beispielfoto!")
+            print("Deine Datei existiert nicht, ich nehme das Beispielfoto!\n")
             writefile()
             pass
         elif os.path.isfile(ownpic):
@@ -63,7 +63,7 @@ def answertotakeownpic():
 #write text from the image into document or just read it
 if not os.path.isfile(testtxt):
     answertotakeownpic()
-    print("Textdatei wird erstellt und ausgegeben\n")
+    #print("Textdatei wird erstellt und ausgegeben\n")
     readfile()
 else:
     print("Textdatei existiert und wird nun ausgelesen, lösche sie um ggf. eine neue einzulesen\n")
